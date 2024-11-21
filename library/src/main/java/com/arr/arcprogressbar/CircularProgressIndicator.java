@@ -178,6 +178,8 @@ public class CircularProgressIndicator extends View {
 
     public void setStrokeWidth(float strokeWidth) {
         this.strokeWidth = strokeWidth;
+        indicatorPaint.setStrokeWidth(strokeWidth);
+        trackPaint.setStrokeWidth(strokeWidth);
         invalidate();
     }
 }
