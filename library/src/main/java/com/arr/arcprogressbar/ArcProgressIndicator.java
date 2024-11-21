@@ -56,28 +56,22 @@ public class ArcProgressIndicator extends View {
         // atrributes
         if (attrs != null) {
             TypedArray array =
-                    getContext()
-                            .obtainStyledAttributes(attrs, R.styleable.CircularProgressIndicator);
+                    getContext().obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
             try {
                 // tamaño del texto
-                setTextSize(
-                        array.getDimension(
-                                R.styleable.CircularProgressIndicator_textSize, textSize));
+                setTextSize(array.getDimension(R.styleable.ProgressIndicator_textSize, textSize));
                 // color del indicador
                 setColorIndicator(
                         array.getColor(
-                                R.styleable.CircularProgressIndicator_colorIndicator,
-                                indicatorColor));
+                                R.styleable.ProgressIndicator_colorIndicator, indicatorColor));
                 // ancho del indicador
                 setStrokeWidth(
-                        array.getDimension(
-                                R.styleable.CircularProgressIndicator_strokeWidth, strokeWidth));
+                        array.getDimension(R.styleable.ProgressIndicator_strokeWidth, strokeWidth));
                 // texto
-                setCenterText(array.getString(R.styleable.CircularProgressIndicator_centerText));
+                setCenterText(array.getString(R.styleable.ProgressIndicator_centerText));
 
                 // color de texto
-                setTextColor(
-                        array.getColor(R.styleable.CircularProgressIndicator_textColor, textColor));
+                setTextColor(array.getColor(R.styleable.ProgressIndicator_textColor, textColor));
             } finally {
                 array.recycle();
             }
@@ -161,6 +155,8 @@ public class ArcProgressIndicator extends View {
 
     public void setStrokeWidth(float strokeWidth) {
         this.strokeWidth = strokeWidth;
+        indicatorPaint.setStrokeWidth(strokeWidth);
+        trackPaint.setStrokeWidth(strokeWidth);
         invalidate();
     }
 }

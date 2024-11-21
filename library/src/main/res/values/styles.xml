@@ -4,5 +4,8 @@
         <item name="textSize">16dp</item>
     </style>
 
-
+    <style name="ArcProgresIndicator">
+        <item name="textSize">16dp</item>
+        <item name="strokeWidth">50dp</item>
+    </style>
 </resources>

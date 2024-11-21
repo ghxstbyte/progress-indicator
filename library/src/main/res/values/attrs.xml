@@ -1,6 +1,6 @@
 <resources>
 
-    <declare-styleable name="CircularProgressIndicator">
+    <declare-styleable name="ProgressIndicator">
 
         <!-- tamaño del texto -->
         <attr name="textSize" format="dimension" />

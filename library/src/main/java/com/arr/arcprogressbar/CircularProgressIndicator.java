@@ -78,27 +78,27 @@ public class CircularProgressIndicator extends View {
         if (attrs != null) {
             TypedArray array =
                     getContext()
-                            .obtainStyledAttributes(attrs, R.styleable.CircularProgressIndicator);
+                            .obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
             try {
                 // tamaño del texto
                 setTextSize(
                         array.getDimension(
-                                R.styleable.CircularProgressIndicator_textSize, textSize));
+                                R.styleable.ProgressIndicator_textSize, textSize));
                 // color del indicador
                 setColorIndicator(
                         array.getColor(
-                                R.styleable.CircularProgressIndicator_colorIndicator,
+                                R.styleable.ProgressIndicator_colorIndicator,
                                 indicatorColor));
                 // ancho del indicador
                 setStrokeWidth(
                         array.getDimension(
-                                R.styleable.CircularProgressIndicator_strokeWidth, strokeWidth));
+                                R.styleable.ProgressIndicator_strokeWidth, strokeWidth));
                 // texto
-                centerText = array.getString(R.styleable.CircularProgressIndicator_centerText);
+                centerText = array.getString(R.styleable.ProgressIndicator_centerText);
 
                 // color de texto
                 setTextColor(
-                        array.getColor(R.styleable.CircularProgressIndicator_textColor, textColor));
+                        array.getColor(R.styleable.ProgressIndicator_textColor, textColor));
             } finally {
                 array.recycle();
             }

@@ -25,6 +25,7 @@
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:layout_margin="10dp"
+            app:strokeWidth="30dp"
             app:textColor="?attr/colorPrimary"
             app:colorIndicator="?attr/colorPrimary" />
         
