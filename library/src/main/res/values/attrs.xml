@@ -1,0 +1,26 @@
+<resources>
+
+    <declare-styleable name="CircularProgressIndicator">
+
+        <!-- tamaño del texto -->
+        <attr name="textSize" format="dimension" />
+
+        <!-- color del texto -->
+        <attr name="textColor" format="color" />
+
+        <!-- color de la barra de progreso -->
+        <attr name="colorIndicator" format="color" />
+
+        <!-- color del fondo de la barra de progreso -->
+        <attr name="colorTrack" format="color" />
+
+        <!-- ancho de la barra de progreso -->
+        <attr name="strokeWidth" format="dimension" />
+
+        <!-- texto -->
+        <attr name="centerText" format="string" />
+
+
+    </declare-styleable>
+
+</resources>

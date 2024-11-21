@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="CircularProgresIndicator">
+        <item name="textSize">16dp</item>
+    </style>
+
+
+</resources>
