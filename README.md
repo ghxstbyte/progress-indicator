@@ -11,7 +11,7 @@ This is a customizable circular progress bar. You can achieve the arc progress e
 [![](https://jitpack.io/v/ghxstbyte/progress-indicator.svg)](https://jitpack.io/#ghxstbyte/progress-indicator)
 ```groovy
 dependencies {
-    implementation("com.github.ghxstbyte:progress-indicator:1.0.0")
+    implementation("com.github.ghxstbyte:progress-indicator:#version-tag")
 
 }
 ```
