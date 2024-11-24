@@ -64,6 +64,10 @@ public class ArcProgressIndicator extends View {
                 setColorIndicator(
                         array.getColor(
                                 R.styleable.ProgressIndicator_colorIndicator, indicatorColor));
+                
+                // track color
+                setTrackColor(array.getColor(R.styleable.ProgressIndicator_colorTrack, trackColor));
+                
                 // ancho del indicador
                 setStrokeWidth(
                         array.getDimension(R.styleable.ProgressIndicator_strokeWidth, strokeWidth));
@@ -157,6 +161,12 @@ public class ArcProgressIndicator extends View {
         this.strokeWidth = strokeWidth;
         indicatorPaint.setStrokeWidth(strokeWidth);
         trackPaint.setStrokeWidth(strokeWidth);
+        invalidate();
+    }
+
+    public void setTrackColor(int color) {
+        this.trackColor = color;
+        trackPaint.setColor(color);
         invalidate();
     }
 }

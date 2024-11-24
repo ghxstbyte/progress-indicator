@@ -45,6 +45,7 @@ The following attributes are shared between arc progress and circular progress i
 |Element|Attribute|Related method(s)|Default value|
 |:---:|:---:|:---:|:---:|
 |Indicator color|app:colorProgress|setProgressColor|Color.BLUE
+|Track color|app:colorTrack|setTrackColor|Color.GRAY
 |Animation|app:arcAnimation|N/A|false
 |Stroke width|app:strokeWidth|setStrokeWidth|10dp
 |Text label|app:centerText|setCenterText|null

@@ -36,24 +36,6 @@ public class CircularProgressIndicator extends View {
     public CircularProgressIndicator(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        // obtener los atributos de android, si no estan disponibles se usan los colores por defecto
-        /*
-                TypedArray a =
-                        context.getTheme()
-                                .obtainStyledAttributes(
-                                        new int[] {
-                                            android.R.attr.colorPrimary,
-                                            android.R.attr.colorSecondary,
-                                            android.R.attr.textColorPrimary
-                                        });
-                try {
-                    indicatorColor = a.getColor(0, Color.BLUE);
-                    trackColor = a.getColor(1, Color.GRAY);
-                    textColor = a.getColor(2, Color.BLACK);
-                } finally {
-                    a.recycle();
-                }
-        */
         // diseño del indicador
         indicatorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         indicatorPaint.setColor(indicatorColor);
@@ -77,28 +59,26 @@ public class CircularProgressIndicator extends View {
         // atrributes
         if (attrs != null) {
             TypedArray array =
-                    getContext()
-                            .obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
+                    getContext().obtainStyledAttributes(attrs, R.styleable.ProgressIndicator);
             try {
                 // tamaño del texto
-                setTextSize(
-                        array.getDimension(
-                                R.styleable.ProgressIndicator_textSize, textSize));
+                setTextSize(array.getDimension(R.styleable.ProgressIndicator_textSize, textSize));
                 // color del indicador
                 setColorIndicator(
                         array.getColor(
-                                R.styleable.ProgressIndicator_colorIndicator,
-                                indicatorColor));
+                                R.styleable.ProgressIndicator_colorIndicator, indicatorColor));
+
+                // track color
+                setTrackColor(array.getColor(R.styleable.ProgressIndicator_colorTrack, trackColor));
+
                 // ancho del indicador
                 setStrokeWidth(
-                        array.getDimension(
-                                R.styleable.ProgressIndicator_strokeWidth, strokeWidth));
+                        array.getDimension(R.styleable.ProgressIndicator_strokeWidth, strokeWidth));
                 // texto
-                centerText = array.getString(R.styleable.ProgressIndicator_centerText);
+                setCenterText(array.getString(R.styleable.ProgressIndicator_centerText));
 
                 // color de texto
-                setTextColor(
-                        array.getColor(R.styleable.ProgressIndicator_textColor, textColor));
+                setTextColor(array.getColor(R.styleable.ProgressIndicator_textColor, textColor));
             } finally {
                 array.recycle();
             }
@@ -167,7 +147,9 @@ public class CircularProgressIndicator extends View {
     }
 
     public void setCenterText(String text) {
-        this.centerText = text;
+        if (text != null && !text.isEmpty()) {
+            this.centerText = text;
+        }
         invalidate();
     }
 
@@ -180,6 +162,12 @@ public class CircularProgressIndicator extends View {
         this.strokeWidth = strokeWidth;
         indicatorPaint.setStrokeWidth(strokeWidth);
         trackPaint.setStrokeWidth(strokeWidth);
+        invalidate();
+    }
+
+    public void setTrackColor(int color) {
+        this.trackColor = color;
+        trackPaint.setColor(color);
         invalidate();
     }
 }
